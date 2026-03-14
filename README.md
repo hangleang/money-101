@@ -20,7 +20,7 @@ A clean, interactive compound interest calculator built with vanilla HTML, CSS, 
 No build step needed. Just open the file in your browser:
 
 ```bash
-git clone https://github.com/your-username/compound-interest-calculator.git
+git clone https://github.com/hangleang/compound-interest-calculator.git
 cd compound-interest-calculator
 open index.html
 ```
