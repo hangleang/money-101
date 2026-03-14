@@ -1,26 +1,41 @@
-# Compound Interest Calculator
+# Money 101
 
-A clean, interactive compound interest calculator built with vanilla HTML, CSS, and JavaScript.
+A pair of interactive financial literacy calculators in a single, self-contained HTML file.
 
-![Compound Interest Calculator](https://img.shields.io/badge/built%20with-HTML%2FCSS%2FJS-2d5a3d?style=flat-square)
+![Built with HTML/CSS/JS](https://img.shields.io/badge/built%20with-HTML%2FCSS%2FJS-2d5a3d?style=flat-square)
 
-## Features
+---
 
-- **Initial investment** — set a lump-sum starting amount
-- **Monthly contributions** — see the impact of consistent saving
-- **Adjustable rate & time horizon** — from 1% to 20%, up to 50 years
-- **Compounding frequency** — yearly, monthly, weekly, or daily
-- **Live chart** — visualizes balance vs. total contributed vs. initial-only growth
-- **Breakdown bar** — shows how much of your final balance is principal, contributions, and interest
+## Tools
+
+### 1 — Compound Interest Calculator
+See how your money grows over time with interest compounding on top of itself.
+
+- Set an initial investment and optional monthly contributions
+- Adjust annual interest rate (1–20%) and time horizon (up to 50 years)
+- Choose compounding frequency: yearly, monthly, weekly, or daily
+- Live chart showing balance vs. total contributed vs. initial-only growth
+- Breakdown bar showing what share of your final balance is principal, contributions, and interest
+
+### 2 — Purchasing Power Erosion
+See how inflation silently erodes what your cash can actually buy.
+
+- Set any starting amount and inflation rate (0.5–20%)
+- One-click historical presets: Fed target (2%), US average (3%), 2022 peak (6.5%), 1979 crisis (13.5%)
+- Side-by-side display of today's value vs. real purchasing power in the future
+- Equivalent goods breakdown (coffee, movie tickets, gas, groceries) so the erosion feels concrete
+- Live chart of real value decay vs. nominal face value
+
+---
 
 ## Getting Started
 
 ### Run locally
 
-No build step needed. Just open the file in your browser:
+No build step needed — just open the file in your browser:
 
 ```bash
-git clone https://github.com/hangleang/compound-interest-calculator.git
+git clone https://github.com/hangleang/money-101.git
 cd compound-interest-calculator
 open index.html
 ```
@@ -30,29 +45,33 @@ open index.html
 1. Push this repo to GitHub (must be public)
 2. Go to **Settings → Pages**
 3. Set source to **Deploy from a branch → main → / (root)**
-4. Your site will be live at `https://your-username.github.io/compound-interest-calculator/`
+4. Your site will be live at `https://your-username.github.io/money-101/`
+
+---
 
 ## How It Works
 
-The calculator uses the standard compound interest formula with regular contributions:
-
+**Compound interest with contributions:**
 ```
-A = P(1 + r/n)^(nt) + PMT × [((1 + r/n)^(nt) - 1) / (r/n)]
+Balance(y) = [Balance(y-1) × (1 + r/n) + PMT × (12/n)]  for each period
 ```
 
-Where:
-- `A` = final balance
-- `P` = principal (initial investment)
-- `r` = annual interest rate (decimal)
-- `n` = compounding periods per year
-- `t` = time in years
-- `PMT` = periodic payment (contribution per period)
+**Purchasing power (inflation-adjusted value):**
+```
+Real Value = Amount / (1 + inflation_rate)^years
+```
+
+Where `r` = annual rate, `n` = compounding periods per year, `PMT` = monthly contribution.
+
+---
 
 ## Tech Stack
 
-- **HTML/CSS/JS** — zero build tooling
-- **[Chart.js 4.4](https://www.chartjs.org/)** — loaded via CDN for the growth chart
+- **HTML/CSS/JS** — zero build tooling, single file
+- **[Chart.js 4.4](https://www.chartjs.org/)** — loaded via CDN for live charts
 - **[DM Serif Display + DM Mono](https://fonts.google.com/)** — via Google Fonts
+
+---
 
 ## License
 
